@@ -1,10 +1,10 @@
-// import Service from '@/src/components/Services/Service'
-// import React from 'react'
+import Service from '@/src/components/Services/Service'
+import React from 'react'
 
-// const service = () => {
-//   return (
-//     <div><Service/></div>
-//   )
-// }
+const service = () => {
+  return (
+    <div><Service/></div>
+  )
+}
 
-// export default service
+export default service
