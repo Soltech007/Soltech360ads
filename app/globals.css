@@ -1,27 +1,258 @@
-@tailwind base;
+ @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+--primary: 0 0% 9%;
+--primary-light: #0066cc;
+--primary-dark: #003366;
+--secondary: 0 0% 96.1%;
+--accent: 0 0% 96.1%;
+--background: 0 0% 100%;
+--foreground: 0 0% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 0 0% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 0 0% 3.9%;
+--primary-foreground: 0 0% 98%;
+--secondary-foreground: 0 0% 9%;
+--muted: 0 0% 96.1%;
+--muted-foreground: 0 0% 45.1%;
+--accent-foreground: 0 0% 9%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 0 0% 89.8%;
+--input: 0 0% 89.8%;
+--ring: 0 0% 3.9%;
+--chart-1: 12 76% 61%;
+--chart-2: 173 58% 39%;
+--chart-3: 197 37% 24%;
+--chart-4: 43 74% 66%;
+--chart-5: 27 87% 67%;
+--radius: 0.5rem;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+@apply scroll-smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@apply bg-white text-gray-800 font-sans antialiased;
+}
+
+/* Custom Scrollbar - Light Theme */
+::-webkit-scrollbar {
+width: 8px;
+}
+
+::-webkit-scrollbar-track {
+@apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+@apply bg-primary-500 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+@apply bg-primary-600;
+}
+  .dark {
+--background: 0 0% 3.9%;
+--foreground: 0 0% 98%;
+--card: 0 0% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 0 0% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 0 0% 9%;
+--secondary: 0 0% 14.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 0 0% 14.9%;
+--muted-foreground: 0 0% 63.9%;
+--accent: 0 0% 14.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 0 0% 14.9%;
+--input: 0 0% 14.9%;
+--ring: 0 0% 83.1%;
+--chart-1: 220 70% 50%;
+--chart-2: 160 60% 45%;
+--chart-3: 30 80% 55%;
+--chart-4: 280 65% 60%;
+--chart-5: 340 75% 55%;
+}
+}
+
+@layer components {
+/* Container */
+.container-custom {
+@apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+/* Gradient Text - Blue */
+.gradient-text {
+@apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500;
+}
+
+.gradient-text-blue {
+@apply bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-primary-600;
+}
+
+/* Primary Button - Blue */
+.btn-primary {
+@apply relative inline-flex items-center justify-center px-8 py-4
+text-base font-semibold text-white
+bg-primary-500
+rounded-xl overflow-hidden
+transition-all duration-300 ease-out
+hover:bg-primary-600
+hover:shadow-blue hover:-translate-y-0.5
+active:translate-y-0
+disabled:opacity-50 disabled:cursor-not-allowed;
+}
+
+.btn-primary::before {
+content: '';
+@apply absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent
+-translate-x-full transition-transform duration-500;
+}
+
+.btn-primary:hover::before {
+@apply translate-x-full;
+}
+
+/* Secondary Button - Outline */
+.btn-secondary {
+@apply relative inline-flex items-center justify-center px-8 py-4
+text-base font-semibold text-primary-500
+bg-transparent border-2 border-primary-500
+rounded-xl
+transition-all duration-300 ease-out
+hover:bg-primary-50 hover:-translate-y-0.5
+active:translate-y-0;
+}
+
+/* White Button */
+.btn-white {
+@apply relative inline-flex items-center justify-center px-8 py-4
+text-base font-semibold text-primary-500
+bg-white
+rounded-xl
+transition-all duration-300 ease-out
+hover:bg-gray-50 hover:shadow-lg hover:-translate-y-0.5
+active:translate-y-0;
+}
+
+/* Section Padding */
+.section-padding {
+@apply py-20 md:py-24 lg:py-28;
+}
+
+/* Card Styles */
+.card {
+@apply bg-white rounded-2xl border border-gray-100 shadow-soft
+transition-all duration-300
+hover:shadow-medium hover:-translate-y-1;
+}
+
+.card-hover {
+@apply transition-all duration-300 ease-out
+hover:-translate-y-2 hover:shadow-large;
+}
+
+/* Glass Effect - Light */
+.glass {
+@apply bg-white/80 backdrop-blur-xl border border-gray-100;
+}
+
+/* Section Backgrounds */
+.bg-section {
+@apply bg-gray-50;
+}
+
+.bg-section-alt {
+@apply bg-gradient-to-br from-primary-50 to-secondary-50;
+}
+
+/* Text Shimmer - Blue */
+.text-shimmer {
+background: linear-gradient(
+90deg,
+#004080 0%,
+#0ea5e9 25%,
+#06b6d4 50%,
+#0ea5e9 75%,
+#004080 100%
+);
+background-size: 200% auto;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: shimmer 3s linear infinite;
+}
+
+/* Floating Animation */
+.float-animation {
+animation: float 6s ease-in-out infinite;
+}
+
+/* Glow Box */
+.glow-box {
+@apply relative;
+}
+
+.glow-box::before {
+content: '';
+@apply absolute -inset-1 bg-gradient-to-r from-primary-400 to-secondary-400
+rounded-2xl blur-xl opacity-20 transition-opacity duration-300;
+}
+
+.glow-box:hover::before {
+@apply opacity-30;
+}
+
+/* Decorative Dots Pattern */
+.dots-pattern {
+background-image: radial-gradient(#004080 1px, transparent 1px);
+background-size: 20px 20px;
+}
+
+/* Grid Background - Light */
+.grid-bg {
+background-image:
+linear-gradient(to right, rgba(0, 64, 128, 0.03) 1px, transparent 1px),
+linear-gradient(to bottom, rgba(0, 64, 128, 0.03) 1px, transparent 1px);
+background-size: 40px 40px;
+}
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.hide-scrollbar {
+-ms-overflow-style: none;
+scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+display: none;
+}
+
+.text-balance {
+text-wrap: balance;
+}
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+}
+  body {
+    @apply bg-background text-foreground;
+}
 }
