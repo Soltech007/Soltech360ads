@@ -246,13 +246,13 @@ export default function RequestQuotePage() {
                     </div>
                   </a>
 
-                  <a href="mailto:hello@SolTech360ads.com" className="flex items-center gap-4 text-white/90 hover:text-white transition-colors">
+                  <a href="mailto:contact@SolTech360ads.com" className="flex items-center gap-4 text-white/90 hover:text-white transition-colors">
                     <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center">
                       <Mail className="w-5 h-5" />
                     </div>
                     <div>
                       <p className="text-sm text-white/60">Email</p>
-                      <p className="font-medium">hello@SolTech360ads.com</p>
+                      <p className="font-medium">contact@SolTech360ads.com</p>
                     </div>
                   </a>
 

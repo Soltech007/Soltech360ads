@@ -16,7 +16,7 @@ import {
    SERVICES LIST
 ============================ */
 const services = [
-"Software",
+// "Software",
 "Branding",
 "Websites",
 //   "Marketing",

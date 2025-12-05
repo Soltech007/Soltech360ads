@@ -27,16 +27,16 @@ const footerLinks = {
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Portfolio", href: "/portfolio" },
-    { label: "Blog", href: "/blog" },
-    { label: "Careers", href: "/careers" },
-    { label: "Contact", href: "/contact" },
-    { label: "Become a Partner", href: "/partner" }, // ⭐ Added Here
+    { label: "Portfolio", href: "/" },
+    { label: "Blog", href: "/" },
+    { label: "Careers", href: "/" },
+    { label: "Effilet Partner", href: "/" },
+    { label: "Become a Partner", href: "/" }, // ⭐ Added Here
   ],
   support: [
-    { label: "Pricing", href: "/pricing" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
+    { label: "Pricing", href: "/" },
+    { label: "FAQ", href: "/" },
+    { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
   ],
 };
@@ -202,7 +202,7 @@ export default function Footer() {
       <div className="border-t border-gray-200">
         <div className="container-custom py-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-gray-500 text-sm">
-            © {new Date().getFullYear()} {siteConfig.name}. A vertical of <Link href={'https://soltechtechservices.com/'}> <span className="text-primary-800 text-bold"> SOLTECH TechServices Pvt Ltd.    </span>  All rights reserved.
+            © {new Date().getFullYear()} Soltech360ads. A vertical of <Link href={'https://soltechtechservices.com/'}> <span className="text-primary-800 text-bold"> SOLTECH TechServices Pvt Ltd.    </span>  All rights reserved.
            
             </Link> 
             
