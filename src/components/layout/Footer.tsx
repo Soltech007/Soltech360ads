@@ -31,7 +31,7 @@ const footerLinks = {
     { label: "Portfolio", href: "/" },
     { label: "Blog", href: "/" },
     { label: "Careers", href: "/" },
-    { label: "Effilet Partner", href: "/" },
+    { label: "Affiliate Partner", href: "/" },
     { label: "Become a Partner", href: "/" }, // ⭐ Added Here
   ],
   support: [
