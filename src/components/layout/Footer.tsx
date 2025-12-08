@@ -12,6 +12,7 @@ import {
   MapPin,
   ArrowRight,
   Heart,
+  Youtube,
 } from "lucide-react";
 import { siteConfig } from "@/src/lib/constants";
 import Image from "next/image";
@@ -42,10 +43,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: siteConfig.social.facebook, label: "Facebook" },
-  { icon: Instagram, href: siteConfig.social.instagram, label: "Instagram" },
-  { icon: Linkedin, href: siteConfig.social.linkedin, label: "LinkedIn" },
-  { icon: Twitter, href: siteConfig.social.twitter, label: "Twitter" },
+  { icon: Facebook, href:"https://www.facebook.com/people/Soltech-360-Ads/61584133210350/", label: "Facebook" },
+  { icon: Instagram, href: "https://www.instagram.com/soltech360ads/", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/company/soltech-ads-360/", label: "LinkedIn" },
+  { icon: Youtube, href: "https://www.youtube.com/channel/UCxZ_YmF017lH1AVSSlLE2HQ", label: "Youtube" },
 ];
 
 export default function Footer() {
