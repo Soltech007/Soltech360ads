@@ -20,10 +20,10 @@ const footerLinks = {
   services: [
     { label: "Facebook Ads", href: "/services/facebook-ads" },
     { label: "Google Ads", href: "/services/google-ads" },
-    { label: "SEO Services", href: "/services/seo" },
+    { label: "SEO Services", href: "/services/seo-optimization" },
     { label: "Website Development", href: "/services/website-development" },
-    { label: "Email Marketing", href: "/services/email-marketing" },
-    { label: "Content Creation", href: "/services/content-creation" },
+    { label: "Email Marketing", href: "/services/email-whatsapp-marketing" },
+    { label: "Content Creation", href: "/services/content-marketing" },
   ],
   company: [
     { label: "About Us", href: "/about" },
