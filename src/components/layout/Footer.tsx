@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import {
   Facebook,
@@ -16,6 +16,8 @@ import {
 } from "lucide-react";
 import { siteConfig } from "@/src/lib/constants";
 import Image from "next/image";
+// CHANGE 1: Import Toaster here
+import toast, { Toaster } from "react-hot-toast";
 
 const footerLinks = {
   services: [
@@ -32,7 +34,7 @@ const footerLinks = {
     { label: "Blog", href: "/" },
     { label: "Careers", href: "/" },
     { label: "Affiliate Partner", href: "/" },
-    { label: "Become a Partner", href: "/" }, // ⭐ Added Here
+    { label: "Become a Partner", href: "/" }, 
   ],
   support: [
     { label: "Pricing", href: "/" },
@@ -50,9 +52,62 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [subscribeStatus, setSubscribeStatus] = useState('idle'); // type inferred string is fine here
+
+   const handleSubscribe = async (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+
+    if (!email) {
+      toast.error("Please enter your email");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubscribeStatus('success');
+        // Success Toast
+        toast.success("Subscribed successfully 🎉", {
+            duration: 4000,
+            style: {
+              background: '#333',
+              color: '#fff',
+            },
+        });
+        setEmail("");
+        setTimeout(() => setSubscribeStatus('idle'), 5000);
+      } else {
+        setSubscribeStatus('error');
+        toast.error(data.error || "Failed to subscribe");
+        setTimeout(() => setSubscribeStatus('idle'), 5000);
+      }
+    } catch (err) {
+      console.error(err);
+      setSubscribeStatus('error');
+      toast.error("Something went wrong");
+      setTimeout(() => setSubscribeStatus('idle'), 5000);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <footer className="bg-white text-gray-900">
+    <footer className="bg-white text-gray-900 relative">
       
+      {/* CHANGE 2: Add Toaster component here to display the notifications */}
+      <Toaster position="top-center" reverseOrder={false} />
+
       {/* Newsletter */}
       <div className="border-b border-gray-200">
         <div className="container-custom py-16">
@@ -64,9 +119,17 @@ export default function Footer() {
               Get the latest digital marketing tips and strategies delivered to
               your inbox.
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <form 
+             onSubmit={handleSubscribe} 
+             aria-labelledby="newsletter-heading"
+             className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
+                 value={email}
+                  aria-required="true"
+                  aria-invalid={subscribeStatus === 'error'}
+                  disabled={loading}
+                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
                 className="flex-1 px-5 py-4 bg-gray-100 border border-gray-300 rounded-xl 
                 text-gray-900 placeholder-gray-500
@@ -75,10 +138,13 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                id="ads"
                 className="px-8 py-4 bg-primary-500 hover:bg-primary-600 
                 text-white font-semibold rounded-xl transition-colors flex items-center justify-center gap-2"
+                 disabled={loading}
+                aria-busy={loading}
               >
-                Subscribe
+                {loading ? "Subscribing..." : "Subscribe"}
                 <ArrowRight className="w-4 h-4" />
               </button>
             </form>
