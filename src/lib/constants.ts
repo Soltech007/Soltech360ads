@@ -5,7 +5,7 @@ export const siteConfig = {
   url: "https://SolTech360ads.com",
 
   contact: {
-    email: "contact@SolTech360ads.com",
+    email: "contact@soltech360ads.com",
     phone: "+91 98765 43210",
     whatsapp: "+919876543210",
     address: "Vibrant Park, Survey No.  182 Near NH 8, GIDC Phase 1, Vapi, Gujarat - 396195, India",

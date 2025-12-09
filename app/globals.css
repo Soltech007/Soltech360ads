@@ -256,3 +256,17 @@ text-wrap: balance;
     @apply bg-background text-foreground;
 }
 }
+
+
+.ql-toolbar.ql-snow {
+  border-color: #e5e7eb !important;
+}
+
+.ql-container.ql-snow {
+  border-color: #e5e7eb !important;
+}
+
+.ql-editor {
+  font-size: 16px;
+  line-height: 1.75;
+}

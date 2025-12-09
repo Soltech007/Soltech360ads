@@ -27,8 +27,8 @@ const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "contact@SolTech360ads.com",
-    link: "mailto:contact@SolTech360ads.com",
+    value: "contact@soltech360ads.com",
+    link: "mailto:contact@soltech360ads.com",
     color: "#0ea5e9",
   },
   {
