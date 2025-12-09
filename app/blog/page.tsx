@@ -1,10 +1,10 @@
-// import Blogs from '@/src/components/Blog/Blogs'
-// import React from 'react'
+import Blogs from '@/src/components/Blog/Blogs'
+import React from 'react'
 
-// const blog = () => {
-//   return (
-//     <div><Blogs/></div>
-//   )
-// }
+const blog = () => {
+  return (
+    <div><Blogs/></div>
+  )
+}
 
-// export default blog
+export default blog
