@@ -1,18 +1,19 @@
-// app/blog/[slug]/page.tsx
-import React from "react";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { createAdminClient } from "@/lib/supabase/server";
-import { Blog } from "@/app/types/blog";
+import { createClient } from "@supabase/supabase-js";
 import BlogPostClient from "./BlogPostClient";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY!,
+  { auth: { persistSession: false } }
+);
 
 interface PageProps {
   params: { slug: string };
 }
 
-async function getBlog(slug: string): Promise<Blog | null> {
-  const supabase = createAdminClient();
-
+// Fetch Single Blog
+async function getBlog(slug: string) {
   const { data, error } = await supabase
     .from("blogs")
     .select("*")
@@ -21,48 +22,34 @@ async function getBlog(slug: string): Promise<Blog | null> {
     .single();
 
   if (error || !data) return null;
-
-  await supabase
-    .from("blogs")
-    .update({ views: (data.views || 0) + 1 })
-    .eq("id", data.id);
-
   return data;
 }
 
-async function getRelatedBlogs(category: string | null, currentId: string): Promise<Blog[]> {
-  const supabase = createAdminClient();
-
-  let query = supabase
+// Related blogs
+async function getRelatedBlogs(category: string, currentId: string) {
+  const { data } = await supabase
     .from("blogs")
     .select("*")
+    .eq("category", category)
     .eq("is_published", true)
     .neq("id", currentId)
     .limit(3);
 
-  if (category) {
-    query = query.eq("category", category);
-  }
-
-  const { data } = await query.order("created_at", { ascending: false });
   return data || [];
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps) {
   const blog = await getBlog(params.slug);
-
-  if (!blog) {
-    return { title: "Blog Not Found" };
-  }
+  if (!blog) return { title: "Blog Not Found" };
 
   return {
-    title: `${blog.title} | SolTech360ads Blog`,
-    description: blog.excerpt || "",
+    title: `${blog.title} | Soltech`,
+    description: blog.excerpt,
     openGraph: {
       title: blog.title,
-      description: blog.excerpt || "",
-      images: blog.featured_image ? [blog.featured_image] : [],
-      type: "article",
+      description: blog.excerpt,
+      images: [blog.featured_image || ""],
+      url: `/blog/${blog.slug}`,
     },
   };
 }
@@ -70,8 +57,16 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function BlogPostPage({ params }: PageProps) {
   const blog = await getBlog(params.slug);
 
-  if (!blog) {
-    notFound();
+  if (!blog) notFound();
+
+  // Increment views safely
+  try {
+    await supabase.rpc("increment_blog_view", { blog_id: blog.id });
+  } catch {
+    await supabase
+      .from("blogs")
+      .update({ views: (blog.views || 0) + 1 })
+      .eq("id", blog.id);
   }
 
   const relatedBlogs = await getRelatedBlogs(blog.category, blog.id);

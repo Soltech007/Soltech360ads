@@ -58,7 +58,7 @@ export const services: Service[] = [
       "Custom, responsive websites that convert visitors into customers with modern design and seamless functionality.",
     longDescription:
       "We create stunning, high-performance websites tailored to your business needs. From simple landing pages to complex web applications, our team delivers pixel-perfect designs with clean code that ranks well on search engines and converts visitors into loyal customers.",
-    image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&q=80",
+    image: "/images/service/service_webdev.webp",
     features: [
       { title: "Custom Design", desc: "Unique, brand-aligned aesthetics" },
       { title: "Responsive", desc: "Perfect on all devices" },
@@ -114,7 +114,7 @@ export const services: Service[] = [
       "Data-driven SEO strategies to improve your search rankings and drive organic traffic to your website.",
     longDescription:
       "Our comprehensive SEO services go beyond keywords. We analyze your entire digital presence, optimize technical aspects, create valuable content, and build quality backlinks to establish your authority and drive sustainable organic growth.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+    image: "/images/service/service_seo.webp",
     features: [
       { title: "Technical SEO", desc: "Site structure optimization" },
       { title: "Keyword Research", desc: "Target high-intent terms" },
@@ -170,7 +170,7 @@ export const services: Service[] = [
       "Strategic social media management to build brand awareness, engage audiences, and drive conversions.",
     longDescription:
       "Transform your social media presence from ordinary to extraordinary. Our data-driven approach combines creative content with strategic targeting to build engaged communities, increase brand awareness, and drive measurable business results across all major platforms.",
-    image: "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&q=80",
+    image: "/images/service/sevice_social_Media_Marketing.webp",
     features: [
       { title: "Platform Strategy", desc: "Channel-specific plans" },
       { title: "Content Creation", desc: "Engaging posts & reels" },
@@ -226,7 +226,7 @@ export const services: Service[] = [
       "High-performance PPC campaigns that deliver qualified leads and maximize your advertising ROI.",
     longDescription:
       "Maximize your advertising ROI with our expert-managed PPC campaigns. We combine advanced targeting, compelling creatives, and continuous optimization to deliver qualified leads at the lowest possible cost across Google, Facebook, Instagram, and more.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&q=80",
+    image: "/images/service/service_Google_&_Meta_Ads.webp",
     features: [
       { title: "Campaign Strategy", desc: "Goal-aligned planning" },
       { title: "Keyword Research", desc: "High-intent targeting" },
@@ -282,7 +282,7 @@ export const services: Service[] = [
       "Complete brand identity solutions from logo design to brand guidelines that make you unforgettable.",
     longDescription:
       "Create a memorable brand identity that resonates with your audience. From logo design to complete brand systems, we help you stand out in a crowded marketplace and build lasting connections with your customers through strategic visual storytelling.",
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=800&q=80",
+    image: "/images/service/service_Branding&design.webp",
     features: [
       { title: "Logo Design", desc: "Memorable brand marks" },
       { title: "Brand Identity", desc: "Complete visual system" },
@@ -338,7 +338,7 @@ export const services: Service[] = [
       "Strategic content creation that educates, engages, and converts your target audience.",
     longDescription:
       "Content is king, and we help you rule. Our content marketing services include blog posts, articles, infographics, videos, and more - all designed to attract, engage, and convert your target audience while establishing your brand as an industry authority.",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
+    image: "/images/service/service_content_marketing.webp",
     features: [
       { title: "Blog Writing", desc: "SEO-optimized articles" },
       { title: "Copywriting", desc: "Persuasive sales copy" },
@@ -394,7 +394,7 @@ export const services: Service[] = [
       "Automated messaging campaigns that nurture leads and drive repeat customers.",
     longDescription:
       "Build lasting customer relationships with personalized messaging across email and WhatsApp. Our automation workflows nurture leads, recover abandoned carts, onboard new customers, and keep your brand top-of-mind with targeted, timely communications.",
-    image: "https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&q=80",
+    image: "/images/service/service_Email_&marketing.webp",
     features: [
       { title: "Email Automation", desc: "Trigger-based flows" },
       { title: "WhatsApp API", desc: "Business messaging" },
@@ -450,7 +450,7 @@ export const services: Service[] = [
       "Complete e-commerce solutions from store setup to marketing that drive sales and growth.",
     longDescription:
       "Launch and scale your online store with our comprehensive e-commerce solutions. From Shopify and WooCommerce setup to product optimization and marketing, we help you create a seamless shopping experience that converts browsers into buyers.",
-    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+    image: "/images/service/service_E-Commerce_Solution.webp",
     features: [
       { title: "Store Setup", desc: "Shopify, WooCommerce" },
       { title: "Product Pages", desc: "Conversion-optimized" },
@@ -506,7 +506,7 @@ export const services: Service[] = [
       "Professional video content for ads, social media, and brand storytelling.",
     longDescription:
       "Video is the most engaging content format. We produce high-quality video content including commercials, social media videos, explainers, testimonials, and more that capture attention and drive action.",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
+    image: "/images/service/service_video.webp",
     features: [
       { title: "Commercial Videos", desc: "Brand advertising" },
       { title: "Social Media Videos", desc: "Reels & shorts" },

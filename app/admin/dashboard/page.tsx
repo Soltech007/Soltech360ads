@@ -11,6 +11,7 @@ import {
   Clock,
   CheckCircle,
   XCircle,
+  Clock1,
 } from "lucide-react";
 import { Blog } from "@/app/types/blog";
 
@@ -62,7 +63,7 @@ export default function AdminDashboard() {
   const statCards = [
     { label: "Total Blogs", value: stats.totalBlogs, icon: FileText, color: "bg-blue-500" },
     { label: "Published", value: stats.publishedBlogs, icon: CheckCircle, color: "bg-green-500" },
-    { label: "Drafts", value: stats.draftBlogs, icon: Clock, color: "bg-yellow-500" },
+    { label: "Drafts", value: stats.draftBlogs, icon: Clock1, color: "bg-blue-500" },
     { label: "Total Views", value: stats.totalViews, icon: Eye, color: "bg-purple-500" },
   ];
 

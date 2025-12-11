@@ -122,7 +122,7 @@ export default function ServiceDetailPage() {
   return (
     <main className="min-h-screen bg-white">
       {/* ===== HERO SECTION ===== */}
-      <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-[#004080] via-[#003366] to-[#002244]">
+      <section className="relative py-20 md:py-10 overflow-hidden bg-gradient-to-br from-[#004080] via-[#003366] to-[#002244]">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div
@@ -246,10 +246,10 @@ export default function ServiceDetailPage() {
                   src={service.image}
                   alt={service.title}
                   width={600}
-                  height={450}
-                  className="w-full h-[450px] object-cover"
+                  height={650}
+                  className="w-full h-[650px] object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#004080]/40 to-transparent" />
+              
               </div>
               {/* Floating Badge */}
              

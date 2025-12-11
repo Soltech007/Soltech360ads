@@ -6,26 +6,32 @@ import { Mail, Lock, LogIn, Loader2, AlertCircle } from "lucide-react";
 import { useAuth } from "@/lib/auth/AuthContext";
 import Image from "next/image";
 
-export default function AdminLoginPage() {
+export default  function AdminLoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { signIn } = useAuth();
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError("");
-    setLoading(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setError("");
+  setLoading(true);
 
-    const { error } = await signIn(email, password);
-    
-    if (error) {
-      setError(error.message);
-    }
-    
-    setLoading(false);
-  };
+  const { data, error } = await signIn(email, password);
+
+  console.log("LOGIN RESPONSE ===>", { data, error });
+
+  if (error) {
+    setError(error.message);
+  } else {
+    window.location.href = "/admin/dashboard"; 
+  }
+
+  setLoading(false);
+};
+
+
 
   return (
     <div className="min-h-screen bg-[#FAFBFC] flex items-center justify-center px-4">
@@ -50,16 +56,8 @@ export default function AdminLoginPage() {
       >
         {/* Logo */}
         <div className="text-center mb-8">
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: "spring", stiffness: 200, damping: 15 }}
-            className="inline-flex items-center justify-center w-20 h-20 bg-[#004080] rounded-2xl shadow-xl mb-4"
-          >
-            <span className="text-white text-3xl font-bold">S</span>
-          </motion.div>
-          <h1 className="text-2xl font-bold text-gray-900">Admin Login</h1>
-          <p className="text-gray-600 mt-2">Sign in to manage your blog</p>
+          
+          <h1 className="text-4xl font-bold text-gray-900">Admin Login</h1>
         </div>
 
         {/* Login Form */}
