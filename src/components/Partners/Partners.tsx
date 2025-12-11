@@ -23,7 +23,7 @@ const partners = [
   {
     id: "brevo",
     name: "Brevo",
-    logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=200&q=80",
+    logo: "/images/partner/brevo.webp",
     color: "#004080",
     category: "Email & Marketing Automation",
     description: "Leading email marketing and automation platform for customer engagement. We leverage Brevo's powerful tools to create automated workflows that nurture leads and retain customers.",
@@ -33,7 +33,7 @@ const partners = [
   {
     id: "google-meta",
     name: "Google & Meta",
-    logo: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?w=200&q=80",
+    logo: "/images/partner/meta.webp",
     color: "#4285f4",
     category: "Advertising Platforms",
     description: "Official certified partners for Google Ads and Meta advertising campaigns. Our team is trained and certified to maximize your ROI on these platforms.",
@@ -43,7 +43,7 @@ const partners = [
   {
     id: "aws",
     name: "Amazon Web Services",
-    logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=200&q=80",
+    logo: "/images/partner/aws1.webp",
     color: "#ff9900",
     category: "Cloud Infrastructure",
     description: "World's most comprehensive cloud platform for hosting and computing. We use AWS to deliver scalable, reliable, and secure infrastructure for your applications.",
@@ -51,19 +51,9 @@ const partners = [
     stats: "99.99% Uptime",
   },
   {
-    id: "bluehost",
-    name: "Bluehost",
-    logo: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=200&q=80",
-    color: "#003d79",
-    category: "Web Hosting",
-    description: "Reliable and affordable web hosting solutions for all business sizes. As Bluehost partners, we provide premium hosting with priority support.",
-    features: ["Shared Hosting", "VPS Hosting", "Dedicated Servers", "WordPress Hosting"],
-    stats: "500+ Sites Hosted",
-  },
-  {
     id: "ibm",
     name: "IBM",
-    logo: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=80",
+    logo: "/images/partner/ibm.webp",
     color: "#054ada",
     category: "Enterprise Solutions",
     description: "Enterprise-grade AI and cloud solutions for business transformation. We integrate IBM's cutting-edge technology for enterprise clients.",
@@ -73,7 +63,7 @@ const partners = [
   {
     id: "cloudflare",
     name: "Cloudflare",
-    logo: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=200&q=80",
+    logo: "/images/partner/cloudflare.webp",
     color: "#f38020",
     category: "Security & Performance",
     description: "Global network for web security, performance, and reliability. We use Cloudflare to protect and accelerate every website we build.",
@@ -128,24 +118,33 @@ function PartnerCard({ partner, index }: { partner: typeof partners[0]; index: n
       className="bg-white rounded-3xl border border-gray-100 overflow-hidden hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group"
     >
       {/* Image */}
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={partner.logo}
-          alt={partner.name}
-          fill
-          className="object-cover group-hover:scale-110 transition-transform duration-500"
-        />
-        <div 
-          className="absolute inset-0 opacity-60"
-          style={{ background: `linear-gradient(135deg, ${partner.color}, ${partner.color}88)` }}
-        />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <h3 className="text-3xl font-bold text-white">{partner.name}</h3>
-        </div>
-        <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
-          {partner.category}
-        </span>
-      </div>
+     <div className="relative h-48 overflow-hidden group">
+  <Image
+    src={partner.logo}
+    alt={partner.name}
+    fill
+    className="object-cover group-hover:scale-110 transition-transform duration-500"
+  />
+
+  {/* Overlay Gradient */}
+  <div
+    className="absolute inset-0 opacity-60"
+    style={{
+      background: `linear-gradient(135deg, ${partner.color}, ${partner.color}88)`
+    }}
+  />
+
+  {/* Text Center */}
+  <div className="absolute inset-0 flex items-center justify-center">
+    <h3 className="text-3xl font-bold text-white">{partner.name}</h3>
+  </div>
+
+  {/* Category Badge */}
+  <span className="absolute top-4 right-4 px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-xs font-medium rounded-full">
+    {partner.category}
+  </span>
+</div>
+
 
       {/* Content */}
       <div className="p-8">
