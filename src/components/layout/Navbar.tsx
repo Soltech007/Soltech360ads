@@ -170,7 +170,7 @@ export default function Navbar() {
             {/* ===== LOGO ===== */}
             <Link href="/" className="flex items-center gap-3 group">
               <div>
-                <Image width={145} height={20} src={'/icons/logo.jpg'} alt="Soltech360"/>
+                <Image width={145} height={20} src={'/icons/logo.webp'} alt="Soltech360"/>
               </div>
             </Link>
 

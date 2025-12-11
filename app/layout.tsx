@@ -11,11 +11,15 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://soltech360ads.com"),   // ★ canonical base URL
+
   title: {
     default: `${siteConfig.name} - Digital Marketing & Web Development Agency`,
     template: `%s | ${siteConfig.name}`,
   },
+
   description: siteConfig.description,
+
   keywords: [
     "digital marketing agency",
     "web development",
@@ -23,15 +27,57 @@ export const metadata: Metadata = {
     "google ads",
     "SEO services",
     "social media marketing",
+    "Next.js agency",
+    "Soltech360Ads",
   ],
+
+  openGraph: {
+    title: `${siteConfig.name} - Digital Marketing & Web Development Agency`,
+    description: siteConfig.description,
+    url: "https://soltech360ads.com",
+    siteName: siteConfig.name,
+    images: [
+      {
+        url: "/icons/logo.webp",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: `${siteConfig.name} - Digital Marketing & Web Development Agency`,
+    description: siteConfig.description,
+    images: ["/icons/logo.webp"],
+    creator: "@soltech360ads",
+  },
+
   icons: {
-    icon: "/icons/favicon.jpg",
+    icon: "/icons/favicon.webp",
+    apple: "/icons/favicon.webp",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  alternates: {
+    canonical: "https://soltech360ads.com",
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
+      {/* Google Tag Manager */}
       <Script id="gtm-script" strategy="afterInteractive">
         {`
           (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -52,10 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ></iframe>
         </noscript>
 
-        {/* LayoutWrapper handles Navbar/Footer conditionally */}
-        <LayoutWrapper>
-          {children}
-        </LayoutWrapper>
+        <LayoutWrapper>{children}</LayoutWrapper>
       </body>
     </html>
   );
