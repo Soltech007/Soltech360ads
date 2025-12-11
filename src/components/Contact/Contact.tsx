@@ -34,7 +34,13 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Address",
-    value: "Vibrant Park, Survey No. 182 Near NH 8, GIDC Phase 1, Vapi, Gujarat - 396195, India",
+   value: (
+  <>
+    Vibrant Park, Survey No. 182 Near NH 8, GIDC <br />
+    Phase 1, Vapi, Gujarat - 396195, India
+  </>
+)
+    ,
     link: "#",
     color: "#10b981",
   },
@@ -229,7 +235,7 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center group"
+                  className="bg-white rounded-2xl p-2 shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 text-center group"
                 > <div className="w-14 h-14 rounded-2xl bg-gray-50 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                     <Icon className="w-7 h-7" style={{ color: info.color }} />
                   </div>
