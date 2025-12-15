@@ -63,7 +63,7 @@ export default function HomePage() {
       <ServicesSection />
       <HowItWorks />
       <WhyChooseUs />
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
       <FAQSection />
       <CTASection />
     </>
