@@ -18,6 +18,7 @@ import {
   Star,
   Quote,
 } from "lucide-react";
+import RequestQuote from "../RequestQuote/RequestQuote";
 
 /* ============================
    DATA
@@ -357,8 +358,9 @@ export default function AboutPage() {
         </div>
       </section> */}
 
+<RequestQuote pageContext="Contact" />
       {/* ===== CTA SECTION ===== */}
-      <section className="py-24 bg-[#004080]">
+      {/* <section className="py-24 bg-[#004080]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
@@ -394,7 +396,7 @@ export default function AboutPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </main>
   );

@@ -85,7 +85,7 @@ export const services: Service[] = [
       "Generate more leads and sales",
       "Provide 24/7 customer access",
       "Outperform competitors online",
-      "Easy to update and manage",
+      // "Easy to update and manage",
     ],
     faqs: [
       {
@@ -141,7 +141,7 @@ export const services: Service[] = [
       "Higher search engine rankings",
       "Better user experience",
       "Long-term sustainable results",
-      "Higher ROI than paid ads",
+      // "Higher ROI than paid ads",
     ],
     faqs: [
       {
@@ -197,7 +197,7 @@ export const services: Service[] = [
       "Build customer loyalty",
       "Drive website traffic",
       "Generate leads and sales",
-      "Gain valuable customer insights",
+      // "Gain valuable customer insights",
     ],
     faqs: [
       {
@@ -253,7 +253,7 @@ export const services: Service[] = [
       "Precise audience targeting",
       "Measurable results and ROI",
       "Flexible budget control",
-      "Quick market testing",
+      // "Quick market testing",
     ],
     faqs: [
       {
@@ -309,7 +309,7 @@ export const services: Service[] = [
       "Build customer trust and loyalty",
       "Create consistent brand experience",
       "Increase perceived value",
-      "Attract your ideal customers",
+      // "Attract your ideal customers",
     ],
     faqs: [
       {
@@ -365,7 +365,7 @@ export const services: Service[] = [
       "Improve SEO rankings",
       "Generate qualified leads",
       "Build audience trust",
-      "Support sales process",
+      // "Support sales process",
     ],
     faqs: [
       {
@@ -421,7 +421,7 @@ export const services: Service[] = [
       "High ROI marketing channel",
       "Personalized messaging at scale",
       "Automated lead nurturing",
-      "Increased customer retention",
+      // "Increased customer retention",
     ],
     faqs: [
       {
@@ -477,7 +477,7 @@ export const services: Service[] = [
       "Reduce operational costs",
       "Scale without limits",
       "Detailed customer insights",
-      "Multiple revenue streams",
+      // "Multiple revenue streams",
     ],
     faqs: [
       {
@@ -533,7 +533,7 @@ export const services: Service[] = [
       "Better message retention",
       "Increased conversions",
       "Improved SEO performance",
-      "Shareable content",
+      // "Shareable content",
     ],
     faqs: [
       {
@@ -559,9 +559,9 @@ export const externalServices = [
   {
     id: "domain-registration",
     icon: Globe,
-    title: "Domain Registration",
+    title: "Get Domain",
     shortTitle: "Domains",
-    description: "Register your perfect domain name with our trusted partner",
+    description: "Register your perfect domain name ",
     externalLink: "https://www.hostinger.in/domain-name-search",
     color: "text-blue-600",
     bgColor: "bg-blue-100",

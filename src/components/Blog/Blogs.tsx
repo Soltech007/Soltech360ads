@@ -12,6 +12,7 @@ import {
   Sparkles,
   ImageIcon,
 } from "lucide-react";
+import RequestQuote from "../RequestQuote/RequestQuote";
 
 interface Blog {
   id: string;
@@ -168,6 +169,8 @@ export default function   BlogPage() {
           </div>
         )}
       </section>
+
+      <RequestQuote pageContext="Blog" />
     </main>
   );
 }

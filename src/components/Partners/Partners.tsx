@@ -15,10 +15,11 @@ import {
   Users,
   TrendingUp,
 } from "lucide-react";
+import RequestQuote from "../RequestQuote/RequestQuote";
 
 /* ============================
    PARTNERS DATA
-============================ */
+============================ */ 
 const partners = [
   {
     id: "brevo",
@@ -175,9 +176,7 @@ function PartnerCard({ partner, index }: { partner: typeof partners[0]; index: n
   );
 }
 
-/* ============================
-   MAIN PARTNERS PAGE
-============================ */
+
 export default function PartnersPage() {
   return (
     <main className="min-h-screen bg-[#FAFBFC]">
@@ -294,8 +293,9 @@ export default function PartnersPage() {
         </div>
       </section>
 
+<RequestQuote pageContext="Partners" />
       {/* ===== BECOME PARTNER CTA ===== */}
-      <section className="py-24 bg-[#004080]">
+      {/* <section className="py-24 bg-[#004080]">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto text-center">
             <motion.h2
@@ -331,7 +331,7 @@ export default function PartnersPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
 
     </main>
   );
