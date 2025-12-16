@@ -10,6 +10,7 @@ import WhyChooseUs from "@/src/components/home/WhyChooseUs";
 import TestimonialsSection from "@/src/components/home/TestimonialsSection";
 import FAQSection from "@/src/components/home/FAQSection";
 import CTASection from "@/src/components/home/CTASection";
+import RequestQuote from "@/src/components/RequestQuote/RequestQuote";
 
 export const metadata: Metadata = {
   title:
@@ -65,7 +66,8 @@ export default function HomePage() {
       <WhyChooseUs />
       {/* <TestimonialsSection /> */}
       <FAQSection />
-      <CTASection />
+      {/* <CTASection /> */}
+      <RequestQuote pageContext={"Home"} />
     </>
   );
 }
