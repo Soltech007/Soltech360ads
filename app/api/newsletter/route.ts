@@ -35,7 +35,7 @@ export async function POST(req: NextRequest) {
     });
 
     const text = await response.text();
-    console.log("📩 Raw Brevo Response:", response.status, text);
+    // console.log("📩 Raw Brevo Response:", response.status, text);
 
    if (response.status === 201 || response.status === 204) {
   return NextResponse.json({ message: "Subscribed successfully 🎉" }, { status: 200 });

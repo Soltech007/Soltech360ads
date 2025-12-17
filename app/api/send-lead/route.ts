@@ -41,7 +41,7 @@ async function ensureLeadSourceExists(sourceName: string) {
       body: JSON.stringify({ source_name: sourceName }),
     });
   } catch (error) {
-    console.log("Source check skipped");
+    // console.log("Source check skipped");
   }
 }
 
@@ -49,7 +49,7 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    console.log("📥 Incoming Form Data:", JSON.stringify(body, null, 2));
+    // console.log("📥 Incoming Form Data:", JSON.stringify(body, null, 2));
 
     if (!body.firstName || !body.email) {
       return NextResponse.json(
@@ -134,12 +134,34 @@ export async function POST(req: NextRequest) {
 
     if (!response.ok) {
       const errorMsg = parseErrorMessage(data);
+
+
+       const ignoredErrors = [
+        "Connection refused", 
+        "Outgoing Mail Server", 
+        "WhatsApp", 
+        "Message Triggered", 
+        "Triggered",
+        "Email Queue",
+        "Please Check Whatsapp Software and Update Contact ID From Their And Link into the contact."
+      ];
+      const isIgnorableError = ignoredErrors.some(err => errorMsg.includes(err));
+
+      if (isIgnorableError) {
+        return NextResponse.json(
+          { success: true, message: "Application submitted successfully!" },
+          { status: 200 }
+        );
+      }
+
       // console.error("❌ ERP Error:", errorMsg);
       return NextResponse.json(
         { error: errorMsg, details: data },
         { status: response.status }
       );
     }
+
+    
 
     return NextResponse.json(
       { success: true, message: "Lead created successfully" },

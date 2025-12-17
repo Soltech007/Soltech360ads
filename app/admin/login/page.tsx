@@ -20,7 +20,6 @@ export default  function AdminLoginPage() {
 
   const { data, error } = await signIn(email, password);
 
-  console.log("LOGIN RESPONSE ===>", { data, error });
 
   if (error) {
     setError(error.message);

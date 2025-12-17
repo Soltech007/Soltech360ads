@@ -34,7 +34,7 @@ const footerLinks = {
     { label: "Blog", href: "/blog" },
     { label: "Careers", href: "/" },
     { label: "Affiliate Partner", href: "/" },
-    { label: "Become a Partner", href: "/" }, 
+    { label: "Become a Partner", href: "/partners" }, 
   ],
   support: [
     { label: "Pricing", href: "/" },
