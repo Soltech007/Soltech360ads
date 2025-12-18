@@ -2,9 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 
 // ✅ Sales Partner ERP Config
 const ERP_CONFIG = {
-  url: "http://45.149.206.178",
-  apiKey: "16e7e2c516604d2",
-  apiSecret: "e21970e5493a485",
+  url: "https://erp.soltechtechservices.com",
+  apiKey: "8c21c94e1a2879b",
+  apiSecret: "3caa5d67879d169",
 } as const;
 
 function stripHtml(html: string): string {
