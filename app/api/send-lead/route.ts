@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
       // 6. Source & Status
       source: "Website",
       status: "Lead",
-      custom_lead_interest: "AIBIZHACKS",
+      custom_lead_interest: "SOLTECH Ads 360",
       custom_redirect_form: pageSource,
 
       // 7. Notes (Backup: Sab kuch yahan bhi dikhega)
