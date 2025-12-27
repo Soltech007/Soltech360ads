@@ -23,8 +23,8 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+91 98765 43210",
-    link: "tel:+919876543210",
+    value: "+91 97237 23322",
+    link: "tel:+91 97237 23322",
     color: "#004080",
   },
   {
@@ -271,7 +271,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                         required
                         disabled={loading}
                         className="w-full px-5 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#004080] focus:ring-2 focus:ring-[#004080]/20 transition-all disabled:bg-gray-100 disabled:cursor-not-allowed"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 97237 23322"
                       />
                     </div>
 

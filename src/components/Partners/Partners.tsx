@@ -618,7 +618,7 @@ export default function ChannelPartnerPremiumPage() {
                               <Input 
                                 id="phone" 
                                 type="tel"
-                                placeholder="+91 98765 43210" 
+                                placeholder="+91 97237 23322" 
                                 value={formData.phone}
                                 onChange={(e) => handleChange("phone", e.target.value)}
                                 className={`${inputClassName} pl-10`}
